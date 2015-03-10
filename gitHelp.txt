@@ -1,0 +1,23 @@
+最近使用git的过程中发现这样一个问题！
+我在使用git push 的时候出现一个错误
+fatal：remote error:
+You can't push to git://github.com/xxx/xxx
+Use git@github.com:username/userRepo.git
+
+当时没有仔细看提示一直没有查到原因
+后来经过大神的点拨
+給了我一个解决方案
+git remote rm origin
+git remote add origin git@github.com:userName/userRepo.git
+git push origin
+仔细对比了错误发生在
+remote 的地址上面
+第一个是 
+git://github.com/username/userrepo.git
+第二个为
+git@github.com:username/userrepo.git
+
+这两种写法有什么不同呢
+答案是：它们使用的通信协议不同！
+第一种方式克隆下来的库不支持push操作
+第二种方式克隆下来的库支持push的操作
