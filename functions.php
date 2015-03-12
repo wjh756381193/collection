@@ -2,8 +2,8 @@
 /**
  * Author:wjh
  * Date:2015-01-09 03:23
- * $array:è¦è¿›è¡Œç¼–ç çš„æ•°ç»„
- * @param :$array å¤„ç†åçš„æ•°ç»„ æ­¤æ—¶ç”¨json_encode()ä¸ä¼šäº§ç”Ÿä¹±ç çš„é—®é¢˜
+ * $array:Òª½øĞĞ±àÂëµÄÊı×é
+ * @param :$array ´¦ÀíºóµÄÊı×é ´ËÊ±ÓÃjson_encode()²»»á²úÉúÂÒÂëµÄÎÊÌâ
  */
 function arrayRecursive(&$array, $function, $apply_to_keys_also = false)
 {
@@ -31,9 +31,9 @@ function arrayRecursive(&$array, $function, $apply_to_keys_also = false)
 
     /**************************************************************
  	 *
- 	 *  å°†æ•°ç»„è½¬æ¢ä¸ºJSONå­—ç¬¦ä¸²ï¼ˆå…¼å®¹ä¸­æ–‡ï¼‰
- 	 *  @param  array   $array      è¦è½¬æ¢çš„æ•°ç»„
- 	 *  @return string      è½¬æ¢å¾—åˆ°çš„jsonå­—ç¬¦ä¸²
+ 	 *  ½«Êı×é×ª»»ÎªJSON×Ö·û´®£¨¼æÈİÖĞÎÄ£©
+ 	 *  @param  array   $array      Òª×ª»»µÄÊı×é
+ 	 *  @return string      ×ª»»µÃµ½µÄjson×Ö·û´®
  	 *  @access public
  	 *
  	 ************************************************************
@@ -50,7 +50,7 @@ function JSON($array) {
  * Date:2014-12-01
  * @return string
  */
-function create_uuid($prefix = ""){    //å¯ä»¥æŒ‡å®šå‰ç¼€
+function create_uuid($prefix = ""){    //¿ÉÒÔÖ¸¶¨Ç°×º
     $str = md5(uniqid(mt_rand(), true));
     $uuid  = substr($str,0,8) . '-';
     $uuid .= substr($str,8,4) . '-';
@@ -60,8 +60,8 @@ function create_uuid($prefix = ""){    //å¯ä»¥æŒ‡å®šå‰ç¼€
     return $prefix . $uuid;
 }
 /**
- * è·å–æ–‡ä»¶çš„æ‰©å±•å
- * @param $file æ–‡ä»¶çš„å…¨è·¯å¾„
+ * »ñÈ¡ÎÄ¼şµÄÀ©Õ¹Ãû
+ * @param $file ÎÄ¼şµÄÈ«Â·¾¶
  */
 function get_extension($file)
 {
@@ -70,7 +70,7 @@ function get_extension($file)
 }
 
 /*
- * ä½œç”¨:æ ¼å¼åŒ–æ•°ç»„æˆ–è€…å¯¹è±¡ç­‰æ•°æ®çš„è¾“å‡º
+ * ×÷ÓÃ:¸ñÊ½»¯Êı×é»òÕß¶ÔÏóµÈÊı¾İµÄÊä³ö
  * Author : WJH
  * Date:2014-11-20
  * @param $data string or array or float or int or object
@@ -89,8 +89,8 @@ function pr($data)
     echo '</pre>';
 }
 /**
- * æ ¹æ®PHPå„ç§ç±»å‹å˜é‡ç”Ÿæˆå”¯ä¸€æ ‡è¯†å·
- * @param mixed $mix å˜é‡
+ * ¸ù¾İPHP¸÷ÖÖÀàĞÍ±äÁ¿Éú³ÉÎ¨Ò»±êÊ¶ºÅ
+ * @param mixed $mix ±äÁ¿
  * @return string
  */
 function to_guid_string($mix) {
@@ -105,13 +105,13 @@ function to_guid_string($mix) {
 }
 
 /**
- * XMLç¼–ç 
- * @param mixed $data æ•°æ®
- * @param string $root æ ¹èŠ‚ç‚¹å
- * @param string $item æ•°å­—ç´¢å¼•çš„å­èŠ‚ç‚¹å
- * @param string $attr æ ¹èŠ‚ç‚¹å±æ€§
- * @param string $id   æ•°å­—ç´¢å¼•å­èŠ‚ç‚¹keyè½¬æ¢çš„å±æ€§å
- * @param string $encoding æ•°æ®ç¼–ç 
+ * XML±àÂë
+ * @param mixed $data Êı¾İ
+ * @param string $root ¸ù½ÚµãÃû
+ * @param string $item Êı×ÖË÷ÒıµÄ×Ó½ÚµãÃû
+ * @param string $attr ¸ù½ÚµãÊôĞÔ
+ * @param string $id   Êı×ÖË÷Òı×Ó½Úµãkey×ª»»µÄÊôĞÔÃû
+ * @param string $encoding Êı¾İ±àÂë
  * @return string
  */
 function xml_encode($data, $root='think', $item='item', $attr='', $id='id', $encoding='utf-8') {
@@ -132,10 +132,10 @@ function xml_encode($data, $root='think', $item='item', $attr='', $id='id', $enc
 }
 
 /**
- * æ•°æ®XMLç¼–ç 
- * @param mixed  $data æ•°æ®
- * @param string $item æ•°å­—ç´¢å¼•æ—¶çš„èŠ‚ç‚¹åç§°
- * @param string $id   æ•°å­—ç´¢å¼•keyè½¬æ¢ä¸ºçš„å±æ€§å
+ * Êı¾İXML±àÂë
+ * @param mixed  $data Êı¾İ
+ * @param string $item Êı×ÖË÷ÒıÊ±µÄ½ÚµãÃû³Æ
+ * @param string $id   Êı×ÖË÷Òıkey×ª»»ÎªµÄÊôĞÔÃû
  * @return string
  */
 function data_to_xml($data, $item='item', $id='id') {
@@ -153,14 +153,14 @@ function data_to_xml($data, $item='item', $id='id') {
 }
 
 /**
- * sessionç®¡ç†å‡½æ•°
- * @param string|array $name sessionåç§° å¦‚æœä¸ºæ•°ç»„åˆ™è¡¨ç¤ºè¿›è¡Œsessionè®¾ç½®
- * @param mixed $value sessionå€¼
+ * session¹ÜÀíº¯Êı
+ * @param string|array $name sessionÃû³Æ Èç¹ûÎªÊı×éÔò±íÊ¾½øĞĞsessionÉèÖÃ
+ * @param mixed $value sessionÖµ
  * @return mixed
  */
 function session($name,$value='') {
     $prefix   =  C('SESSION_PREFIX');
-    if(is_array($name)) { // sessionåˆå§‹åŒ– åœ¨session_start ä¹‹å‰è°ƒç”¨
+    if(is_array($name)) { // session³õÊ¼»¯ ÔÚsession_start Ö®Ç°µ÷ÓÃ
         if(isset($name['prefix'])) C('SESSION_PREFIX',$name['prefix']);
         if(C('VAR_SESSION_ID') && isset($_REQUEST[C('VAR_SESSION_ID')])){
             session_id($_REQUEST[C('VAR_SESSION_ID')]);
@@ -177,47 +177,47 @@ function session($name,$value='') {
         if(isset($name['cache_limiter']))   session_cache_limiter($name['cache_limiter']);
         if(isset($name['cache_expire']))    session_cache_expire($name['cache_expire']);
         if(isset($name['type']))            C('SESSION_TYPE',$name['type']);
-        if(C('SESSION_TYPE')) { // è¯»å–sessioné©±åŠ¨
+        if(C('SESSION_TYPE')) { // ¶ÁÈ¡sessionÇı¶¯
             $class      = 'Session'. ucwords(strtolower(C('SESSION_TYPE')));
-            // æ£€æŸ¥é©±åŠ¨ç±»
+            // ¼ì²éÇı¶¯Àà
             if(require_cache(EXTEND_PATH.'Driver/Session/'.$class.'.class.php')) {
                 $hander = new $class();
                 $hander->execute();
             }else {
-                // ç±»æ²¡æœ‰å®šä¹‰
+                // ÀàÃ»ÓĞ¶¨Òå
                 throw_exception(L('_CLASS_NOT_EXIST_').': ' . $class);
             }
         }
-        // å¯åŠ¨session
+        // Æô¶¯session
         if(C('SESSION_AUTO_START'))  session_start();
     }elseif('' === $value){ 
-        if(0===strpos($name,'[')) { // session æ“ä½œ
-            if('[pause]'==$name){ // æš‚åœsession
+        if(0===strpos($name,'[')) { // session ²Ù×÷
+            if('[pause]'==$name){ // ÔİÍ£session
                 session_write_close();
-            }elseif('[start]'==$name){ // å¯åŠ¨session
+            }elseif('[start]'==$name){ // Æô¶¯session
                 session_start();
-            }elseif('[destroy]'==$name){ // é”€æ¯session
+            }elseif('[destroy]'==$name){ // Ïú»Ùsession
                 $_SESSION =  array();
                 session_unset();
                 session_destroy();
-            }elseif('[regenerate]'==$name){ // é‡æ–°ç”Ÿæˆid
+            }elseif('[regenerate]'==$name){ // ÖØĞÂÉú³Éid
                 session_regenerate_id();
             }
-        }elseif(0===strpos($name,'?')){ // æ£€æŸ¥session
+        }elseif(0===strpos($name,'?')){ // ¼ì²ésession
             $name   =  substr($name,1);
-            if(strpos($name,'.')){ // æ”¯æŒæ•°ç»„
+            if(strpos($name,'.')){ // Ö§³ÖÊı×é
                 list($name1,$name2) =   explode('.',$name);
                 return $prefix?isset($_SESSION[$prefix][$name1][$name2]):isset($_SESSION[$name1][$name2]);
             }else{
                 return $prefix?isset($_SESSION[$prefix][$name]):isset($_SESSION[$name]);
             }
-        }elseif(is_null($name)){ // æ¸…ç©ºsession
+        }elseif(is_null($name)){ // Çå¿Õsession
             if($prefix) {
                 unset($_SESSION[$prefix]);
             }else{
                 $_SESSION = array();
             }
-        }elseif($prefix){ // è·å–session
+        }elseif($prefix){ // »ñÈ¡session
             if(strpos($name,'.')){
                 list($name1,$name2) =   explode('.',$name);
                 return isset($_SESSION[$prefix][$name1][$name2])?$_SESSION[$prefix][$name1][$name2]:null;  
@@ -232,13 +232,13 @@ function session($name,$value='') {
                 return isset($_SESSION[$name])?$_SESSION[$name]:null;
             }            
         }
-    }elseif(is_null($value)){ // åˆ é™¤session
+    }elseif(is_null($value)){ // É¾³ısession
         if($prefix){
             unset($_SESSION[$prefix][$name]);
         }else{
             unset($_SESSION[$name]);
         }
-    }else{ // è®¾ç½®session
+    }else{ // ÉèÖÃsession
         if($prefix){
             if (!is_array($_SESSION[$prefix])) {
                 $_SESSION[$prefix] = array();
@@ -251,21 +251,21 @@ function session($name,$value='') {
 }
 
 /**
- * Cookie è®¾ç½®ã€è·å–ã€åˆ é™¤
- * @param string $name cookieåç§°
- * @param mixed $value cookieå€¼
- * @param mixed $options cookieå‚æ•°
+ * Cookie ÉèÖÃ¡¢»ñÈ¡¡¢É¾³ı
+ * @param string $name cookieÃû³Æ
+ * @param mixed $value cookieÖµ
+ * @param mixed $options cookie²ÎÊı
  * @return mixed
  */
 function cookie($name, $value='', $option=null) {
-    // é»˜è®¤è®¾ç½®
+    // Ä¬ÈÏÉèÖÃ
     $config = array(
-        'prefix'    =>  C('COOKIE_PREFIX'), // cookie åç§°å‰ç¼€
-        'expire'    =>  C('COOKIE_EXPIRE'), // cookie ä¿å­˜æ—¶é—´
-        'path'      =>  C('COOKIE_PATH'), // cookie ä¿å­˜è·¯å¾„
-        'domain'    =>  C('COOKIE_DOMAIN'), // cookie æœ‰æ•ˆåŸŸå
+        'prefix'    =>  C('COOKIE_PREFIX'), // cookie Ãû³ÆÇ°×º
+        'expire'    =>  C('COOKIE_EXPIRE'), // cookie ±£´æÊ±¼ä
+        'path'      =>  C('COOKIE_PATH'), // cookie ±£´æÂ·¾¶
+        'domain'    =>  C('COOKIE_DOMAIN'), // cookie ÓĞĞ§ÓòÃû
     );
-    // å‚æ•°è®¾ç½®(ä¼šè¦†ç›–é»™è®¤è®¾ç½®)
+    // ²ÎÊıÉèÖÃ(»á¸²¸ÇüaÈÏÉèÖÃ)
     if (!is_null($option)) {
         if (is_numeric($option))
             $option = array('expire' => $option);
@@ -273,13 +273,13 @@ function cookie($name, $value='', $option=null) {
             parse_str($option, $option);
         $config     = array_merge($config, array_change_key_case($option));
     }
-    // æ¸…é™¤æŒ‡å®šå‰ç¼€çš„æ‰€æœ‰cookie
+    // Çå³ıÖ¸¶¨Ç°×ºµÄËùÓĞcookie
     if (is_null($name)) {
         if (empty($_COOKIE))
             return;
-        // è¦åˆ é™¤çš„cookieå‰ç¼€ï¼Œä¸æŒ‡å®šåˆ™åˆ é™¤configè®¾ç½®çš„æŒ‡å®šå‰ç¼€
+        // ÒªÉ¾³ıµÄcookieÇ°×º£¬²»Ö¸¶¨ÔòÉ¾³ıconfigÉèÖÃµÄÖ¸¶¨Ç°×º
         $prefix = empty($value) ? $config['prefix'] : $value;
-        if (!empty($prefix)) {// å¦‚æœå‰ç¼€ä¸ºç©ºå­—ç¬¦ä¸²å°†ä¸ä½œå¤„ç†ç›´æ¥è¿”å›
+        if (!empty($prefix)) {// Èç¹ûÇ°×ºÎª¿Õ×Ö·û´®½«²»×÷´¦ÀíÖ±½Ó·µ»Ø
             foreach ($_COOKIE as $key => $val) {
                 if (0 === stripos($key, $prefix)) {
                     setcookie($key, '', time() - 3600, $config['path'], $config['domain']);
@@ -305,9 +305,9 @@ function cookie($name, $value='', $option=null) {
     } else {
         if (is_null($value)) {
             setcookie($name, '', time() - 3600, $config['path'], $config['domain']);
-            unset($_COOKIE[$name]); // åˆ é™¤æŒ‡å®šcookie
+            unset($_COOKIE[$name]); // É¾³ıÖ¸¶¨cookie
         } else {
-            // è®¾ç½®cookie
+            // ÉèÖÃcookie
             if(is_array($value)){
                 $value  = 'think:'.json_encode(array_map('urlencode',$value));
             }
@@ -319,11 +319,11 @@ function cookie($name, $value='', $option=null) {
 }
 
 /**
- * åŠ è½½åŠ¨æ€æ‰©å±•æ–‡ä»¶
+ * ¼ÓÔØ¶¯Ì¬À©Õ¹ÎÄ¼ş
  * @return void
  */
 function load_ext_file() {
-    // åŠ è½½è‡ªå®šä¹‰å¤–éƒ¨æ–‡ä»¶
+    // ¼ÓÔØ×Ô¶¨ÒåÍâ²¿ÎÄ¼ş
     if(C('LOAD_EXT_FILE')) {
         $files      =  explode(',',C('LOAD_EXT_FILE'));
         foreach ($files as $file){
@@ -331,7 +331,7 @@ function load_ext_file() {
             if(is_file($file)) include $file;
         }
     }
-    // åŠ è½½è‡ªå®šä¹‰çš„åŠ¨æ€é…ç½®æ–‡ä»¶
+    // ¼ÓÔØ×Ô¶¨ÒåµÄ¶¯Ì¬ÅäÖÃÎÄ¼ş
     if(C('LOAD_EXT_CONFIG')) {
         $configs    =  C('LOAD_EXT_CONFIG');
         if(is_string($configs)) $configs =  explode(',',$configs);
@@ -345,8 +345,8 @@ function load_ext_file() {
 }
 
 /**
- * è·å–å®¢æˆ·ç«¯IPåœ°å€
- * @param integer $type è¿”å›ç±»å‹ 0 è¿”å›IPåœ°å€ 1 è¿”å›IPV4åœ°å€æ•°å­—
+ * »ñÈ¡¿Í»§¶ËIPµØÖ·
+ * @param integer $type ·µ»ØÀàĞÍ 0 ·µ»ØIPµØÖ· 1 ·µ»ØIPV4µØÖ·Êı×Ö
  * @return mixed
  */
 function get_client_ip($type = 0) {
@@ -363,15 +363,15 @@ function get_client_ip($type = 0) {
     }elseif (isset($_SERVER['REMOTE_ADDR'])) {
         $ip     =   $_SERVER['REMOTE_ADDR'];
     }
-    // IPåœ°å€åˆæ³•éªŒè¯
+    // IPµØÖ·ºÏ·¨ÑéÖ¤
     $long = sprintf("%u",ip2long($ip));
     $ip   = $long ? array($ip, $long) : array('0.0.0.0', 0);
     return $ip[$type];
 }
 
 /**
- * å‘é€HTTPçŠ¶æ€
- * @param integer $code çŠ¶æ€ç 
+ * ·¢ËÍHTTP×´Ì¬
+ * @param integer $code ×´Ì¬Âë
  * @return void
  */
 function send_http_status($code) {
@@ -426,12 +426,12 @@ function send_http_status($code) {
     );
     if(isset($_status[$code])) {
         header('HTTP/1.1 '.$code.' '.$_status[$code]);
-        // ç¡®ä¿FastCGIæ¨¡å¼ä¸‹æ­£å¸¸
+        // È·±£FastCGIÄ£Ê½ÏÂÕı³£
         header('Status:'.$code.' '.$_status[$code]);
     }
 }
 
-// è¿‡æ»¤è¡¨å•ä¸­çš„è¡¨è¾¾å¼
+// ¹ıÂË±íµ¥ÖĞµÄ±í´ïÊ½
 function filter_exp(&$value){
     if (in_array(strtolower($value),array('exp','or'))){
         $value .= ' ';

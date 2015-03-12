@@ -1,16 +1,16 @@
-ï»¿<?php 
+<?php 
 /**
- *æ±‚ä¸¤ä¸ªå·²çŸ¥ç»çº¬åº¦ä¹‹é—´çš„è·ç¦»,å•ä½ä¸ºç±³
- * @param float $lng1 ç¬¬ä¸€ç‚¹çš„ç»åº¦
- * @param float $lat1 ç¬¬ä¸€ç‚¹çš„ç»´åº¦
- * @param float $lng2 ç¬¬äºŒç‚¹çš„ç»åº¦
- * @param float $lat2 ç¬¬äºŒç‚¹çš„ç»´åº¦
- * @return boolean å°äºŽäº”å…¬é‡Œæ—¶è¿”å›žtrueï¼Œåä¹‹è¿”å›žfalse;
+ *ÇóÁ½¸öÒÑÖª¾­Î³¶ÈÖ®¼äµÄ¾àÀë,µ¥Î»ÎªÃ×
+ * @param float $lng1 µÚÒ»µãµÄ¾­¶È
+ * @param float $lat1 µÚÒ»µãµÄÎ¬¶È
+ * @param float $lng2 µÚ¶þµãµÄ¾­¶È
+ * @param float $lat2 µÚ¶þµãµÄÎ¬¶È
+ * @return boolean Ð¡ÓÚÎå¹«ÀïÊ±·µ»Øtrue£¬·´Ö®·µ»Øfalse;
  * @author wjh
  */
 function getDistance($lng1=0.0,$lat1=0.0,$lng2=0.0,$lat2=0.0){
-    //å°†è§’åº¦è½¬ä¸ºç‹åº¦
-    $radLat1=deg2rad($lat1); //deg2rad()å‡½æ•°å°†è§’åº¦è½¬æ¢ä¸ºå¼§åº¦
+    //½«½Ç¶È×ªÎªºü¶È
+    $radLat1=deg2rad($lat1); //deg2rad()º¯Êý½«½Ç¶È×ª»»Îª»¡¶È
     $radLat2=deg2rad($lat2);
     $radLng1=deg2rad($lng1);
     $radLng2=deg2rad($lng2);

@@ -7,7 +7,7 @@ function get_url() {
     return $sys_protocal.(isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : '').$relate_url;
  }
  
-  // 鑾峰彇褰撳墠椤甸潰瀹屾暣URL鍦板潃
+  // 获取当前页面完整URL地址
     private function getCurrentUrl() {
         $sys_protocal = isset($_SERVER['SERVER_PORT']) && $_SERVER['SERVER_PORT'] == '443' ? 'https://' : 'http://';
         $php_self = $_SERVER['PHP_SELF'] ? $_SERVER['PHP_SELF'] : $_SERVER['SCRIPT_NAME'];
