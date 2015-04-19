@@ -21,3 +21,6 @@ git@github.com:username/userrepo.git
 答案是：它们使用的通信协议不同！
 第一种方式克隆下来的库不支持push操作
 第二种方式克隆下来的库支持push的操作
+
+当git上传一个大的文件的时候出现错误无法解决会导致后续无法继续使用 解决方式如下：启动的FOLDERNAME要替换为你的相应的文件
+git filter-branch -f --index-filter "git rm -rf --cached --ignore-unmatch FOLDERNAME" -- --all
